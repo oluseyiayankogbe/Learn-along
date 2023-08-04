@@ -18,18 +18,16 @@ output "security-group_id" {
   value = module.vpc.security-group_id
 }
 
-output "alb-target-group_arn" {
-  value = module.vpc.alb-target-group_arn
+output "lb-target-group_arn" {
+  value = module.vpc.lb-target-group_arn
 }
 
-output "application-load-balancer_dns_name" {
-  value = module.vpc.application-load-balancer_dns_name
+output "load-balancer_dns_name" {
+  value = module.vpc.load-balancer_dns_name
 }
 
-output "application-load-balancer_zone_id" {
-  value = module.vpc.application-load-balancer_zone_id
+output "load-balancer_zone_id" {
+  value = module.vpc.load-balancer_zone_id
 }
 
-output "acm_certificate_arn" {
-  value = module.vpc.acm_certificate_arn
-}
+

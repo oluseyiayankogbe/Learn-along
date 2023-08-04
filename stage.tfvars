@@ -1,6 +1,6 @@
 
 #vpc atttributes
-project_name         = "junotest"
+project_name         = "junostage"
 region               = "us-west-1"
 vpc_cidr             = "10.0.0.0/16"
 enable_dns_hostnames = true

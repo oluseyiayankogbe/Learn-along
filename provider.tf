@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket         = "doktorsanti-s3statebackend062023"
     dynamodb_table = "doktorsanti-dynamodbtable"
-    key            = "global/mystatefile5/terraform.tfstate"
+    key            = "global/mystatefile7/terraform.tfstate"
     region         = "eu-west-2"
     encrypt        = true
   }
@@ -32,7 +32,7 @@ provider "postgresql" {
   scheme          = "awspostgres"
   host            = "test"
   port            = 5432
-  #name            = var.db_name
+  #name           = var.db_name
   username        = var.username
   password        = var.password
   sslmode         = "require"

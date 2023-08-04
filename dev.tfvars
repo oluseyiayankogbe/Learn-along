@@ -1,6 +1,6 @@
 
 #vpc atttributes
-project_name         = "junotest"
+project_name         = "junodev"
 region               = "us-west-1"
 vpc_cidr             = "10.0.0.0/16"
 enable_dns_hostnames = true
@@ -35,7 +35,6 @@ db_subnet_group_name  = "dbsng"
 #ECR Attributes
 repository_name       = "juno-project-image"
 image_tag             = "version2"
-
 
 
 

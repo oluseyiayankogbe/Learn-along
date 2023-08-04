@@ -18,10 +18,7 @@ module "vpc" {
   map_public_ip_on_launch                     = var.map_public_ip_on_launch
   enable_resource_name_dns_a_record_on_launch = var.enable_resource_name_dns_a_record_on_launch
   instance_tenancy                            = var.instance_tenancy
-  #ec2 attributes
-  linux_instance_type = var.linux_instance_type
-  privateserver1              = var.privateserver1
-  privateserver2              = var.privateserver2
+  
   associate_public_ip_address = var.associate_public_ip_address
   #dbsubnetgroup attributes
   name = var.name
@@ -37,10 +34,9 @@ module "vpc" {
   parameter_group_name  = var.parameter_group_name
   skip_final_snapshot   = var.skip_final_snapshot
   db_subnet_group_name  = var.db_subnet_group_name
-  #alb attributes
-  #certificate_arn       = module.route-53.acm_certificate_arn
-  domain_name           = var.domain_name
-
+  #ECR Attributes
+  repository_name       = var.repository_name 
+  image_tag             = var.image_tag 
 }
 
 module "key-pair" {
@@ -48,18 +44,22 @@ module "key-pair" {
   project_name = var.project_name
 }
 
-module "iam-profile" {
-  source       = "./child-modules/iam-profile"
+
+
+module "ecs-task-execution-role" {
+  source       = "./child-modules/ecs-task-execution-role"
   project_name = var.project_name
-  role         = var.role
+  role         = "${var.project_name}-ecsTaskExecutionRole"
 
 }
 
-#module "route-53" {
-  #source                      = "./child-modules/route-53"
-  #name                       = var.domain_name
-  #domain_name                 = var.domain_name
-  #certificate_arn       = var.certificate_arn
+module "ecs-autoscale-role" {
+  source       = "./child-modules/ecs-autoscale-role"
+  project_name = var.project_name
+  role         = "${var.project_name}-ecsAutoscaleRole"
 
-#}
+}
+
+
+
 

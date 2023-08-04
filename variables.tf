@@ -13,12 +13,6 @@ variable "private_subnets_cidr" {}
 variable "map_public_ip_on_launch" {}
 variable "enable_resource_name_dns_a_record_on_launch" {}
 variable "instance_tenancy" {}
-#ec2 attributes
-variable "linux_instance_type" {}
-#variable "publicserver1" {}
-#variable "publicserver2" {}
-variable "privateserver1" {}
-variable "privateserver2" {}
 variable "associate_public_ip_address" {}
 #dbsubnetgroup attributes
 variable "name" {}
@@ -34,10 +28,8 @@ variable "password" {}
 variable "parameter_group_name" {}
 variable "skip_final_snapshot" {}
 variable "db_subnet_group_name" {}
-#Iam profile attributes
-variable "role" {}
-#variable "certificate_arn" {}
-variable "domain_name" {}
+variable "repository_name" {}
+variable "image_tag" {}
 
 
 

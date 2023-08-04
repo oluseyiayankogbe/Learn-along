@@ -24,15 +24,6 @@ variable "public_subnets_cidr" {}
 
 variable "private_subnets_cidr" {}
 
-variable "linux_instance_type" {}
-
-#variable "publicserver1" {}
-
-#variable "publicserver2" {}
-
-variable "privateserver1" {}
-
-variable "privateserver2" {}
 
 variable "associate_public_ip_address" {}
 
@@ -60,6 +51,6 @@ variable "skip_final_snapshot" {}
 
 variable "db_subnet_group_name" {}
 
-#variable "certificate_arn" {}
+variable "repository_name" {}
 
-variable "domain_name" {}
+variable "image_tag" {}
